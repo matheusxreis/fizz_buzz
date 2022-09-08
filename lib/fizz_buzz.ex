@@ -5,6 +5,10 @@ defmodule FizzBuzz do
     |> handle_file_read()
   end
 
-  def handle_file_read({:ok, result}), do: result
+  def handle_file_read({:ok, result}) do
+    result
+    |> String.split(",")
+    |> Enum.map(fn x -> String.to_integer(x) end)
+  end
   def handle_file_read({:error, reason}), do: reason
 end
