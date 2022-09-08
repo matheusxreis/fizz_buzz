@@ -8,7 +8,7 @@ defmodule FizzBuzz do
   def handle_file_read({:ok, result}) do
     result
     |> String.split(",")
-    |> Enum.map(fn x -> String.to_integer(x) end)
+    |> Enum.map(&String.to_integer/1)
   end
   def handle_file_read({:error, reason}), do: reason
 end
