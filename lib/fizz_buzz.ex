@@ -1,6 +1,6 @@
 defmodule FizzBuzz do
   def build(file_name) do
-    file = File.read(file_name)
-    IO.inspect(file)
+    {:ok, file} = File.read(file_name)
+    file
   end
 end
