@@ -1,6 +1,8 @@
 defmodule FizzBuzz do
   def build(file_name) do
-    {:ok, file} = File.read(file_name)
-    file
+    case File.read(file_name) do
+      {:ok, result} -> result
+      {:error, reason} -> reason
+    end
   end
 end
